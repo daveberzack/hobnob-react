@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { GameContext } from "../utils/GameContext";
-import Scores from "./Scores";
+import Scores from "../components/Scores";
 
 export default function Guess() {
 

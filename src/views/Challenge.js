@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { GameContext } from "../utils/GameContext";
-import Scores from "./Scores";
+import Scores from "../components/Scores";
 export default function Challenge() {
   
   const { currentGuessingPlayer, currentCardToGuess, handleGuess } = useContext(GameContext);

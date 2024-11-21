@@ -7,8 +7,8 @@ export default function Home() {
     return (
       <div className="page" id="home-page">
         <h1>Home</h1>
-        <button onClick={showOptions}>Play</button>
-        <button onClick={showAbout}>About</button>
+        <button variant="contained" onClick={showOptions}>Play</button>
+        {/* <button variant="contained" onClick={showAbout}>About</button> */}
       </div>
     );
 }

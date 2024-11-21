@@ -1,15 +1,14 @@
 import { useContext } from "react";
 import { GameContext } from "../utils/GameContext";
-
+import ScoreTab from "./ScoreTab";
 export default function Scores() {
   
   const { playerScores, currentTurnPlayer} = useContext(GameContext);
     return (
-      <div className="page" id="about-page">
+      <div className="scores">
         {
           playerScores.map( (score, i )=>{
-            if (i==currentTurnPlayer) return "["+i+":"+score+"] ... "
-            else return i+":"+score+" ... "
+            return <ScoreTab player={i} score={score} isCurrent={i==currentTurnPlayer} />
           })
         }
       </div>
