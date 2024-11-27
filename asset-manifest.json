@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/hobnob-react/static/css/main.1f0cb332.css",
+    "main.js": "/hobnob-react/static/js/main.1d8aa671.js",
+    "index.html": "/hobnob-react/index.html",
+    "main.1f0cb332.css.map": "/hobnob-react/static/css/main.1f0cb332.css.map",
+    "main.1d8aa671.js.map": "/hobnob-react/static/js/main.1d8aa671.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f0cb332.css",
+    "static/js/main.1d8aa671.js"
+  ]
+}
