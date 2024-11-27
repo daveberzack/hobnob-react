@@ -30,9 +30,9 @@ const GameProvider = ({ children }) => {
 
     //temporarily skip start screens
     useEffect( ()=> {
-        setCurrentView(views.OPTIONS);
-        startGame(3, 15, 8);
-        setPlayerScores([4,2,1,3]);
+        // setCurrentView(views.OPTIONS);
+        // startGame(3, 15, 8);
+        // setPlayerScores([4,2,1,3]);
     },[]);
      
     function shuffleArray(array) {
