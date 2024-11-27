@@ -13,11 +13,11 @@ import { GameContext } from "./utils/GameContext";
 
 function App() {
 
-  const { currentView, views } = useContext(GameContext);
+  const { currentView, views, currentTurnPlayer } = useContext(GameContext);
 
   const cv = currentView;
   return (
-    <div id="app">
+    <div id="app" className={"current-player-"+currentTurnPlayer}>
       {cv==views.HOME && <Home />}
       {cv==views.ABOUT && <About />}
       {cv==views.OPTIONS && <Options />}

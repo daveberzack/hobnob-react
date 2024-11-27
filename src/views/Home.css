@@ -1,0 +1,26 @@
+
+#home-page {
+
+}
+
+#home-page #logo {
+    width: 100%;
+}
+
+#home-page .home-buttons {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#home-page button {
+    margin:5px;
+   justify-content: center;
+}

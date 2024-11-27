@@ -7,39 +7,158 @@ blockquote:before,blockquote:after,q:before,q:after { content: ''; content: none
 table { border-collapse: collapse; border-spacing: 0;}
 
 body {
-    color: darkblue;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #222222;
+    color: #222222;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+    
+    font-family: "Fredoka", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 100;
+    font-variation-settings:
+      "wdth" 100;
+  }
+#app {
+    display: flex;
+    justify-content: center;
 }
-
 .page {
     position: relative;
-    margin: 0px auto;
-    background-color: lightblue;
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    max-width: 475px;
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     
-    width: 100%;
-    max-width: 600px;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
-button {
-    background-color: yellow;
-    border: 2px solid darkblue;
+.content-box {
+    display: flex;
+    flex-direction: row;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%;
+    height: 150px;
+}
+
+.content-box .instructions {
+    flex: 1;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+.content-box .challenge-instructions-inner {
+    margin:5px;
+    padding:5px 5px;
+    box-sizing: border-box;
     border-radius: 10px;
-    padding: 5px 10px;
-    font-size: 1.5em;
-    color: darkblue;
-    font-weight: bold;
+    border: 5px solid #222;
+    display:flex;
 }
 
-.scores {
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.instructions h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    width: 130px;
+    border: 0px solid black;
+    padding: 3px 0px;
+}
+button {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #222;
+    border-radius: 10px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    width: 120px;
+}
+button .icon {
+    width: 30px;
+    height: 30px;
+}
+button h3 {
+    flex: 1;
+    text-align: left;
+    margin-left:5px;
+}
+.placeholder {
+    opacity: 0;
+    pointer-events: none;
+    cursor: auto;
+}
+
+.challenge-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  
+  .challenge-modal {
+    position: relative;
+    top:-80px;
+    width: 250px;
+    max-width: 90%;
+    text-align: center;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border: 5px solid #222;
+    line-height: 1.25;
+    font-size: 25px;
+  }
+
+.current-player-0 .current-player-bg, .player-bg-0 {
+    background-color: rgb(210, 182, 240);
+}
+.current-player-1 .current-player-bg, .player-bg-1 {
+    background-color: rgb(255, 201, 101);
+}
+.current-player-2 .current-player-bg, .player-bg-2 {
+    background-color: lightgreen;
+}
+.current-player-3 .current-player-bg, .player-bg-3 {
+    background-color: pink;
+}
+.current-player-4 .current-player-bg, .player-bg-4 {
+    background-color: lightblue;
+}
+.current-player-5 .current-player-bg, .player-bg-5 {
+    background-color: rgb(255, 255, 186);
+}
+.current-player-6 .current-player-bg, .player-bg-6 {
+    background-color: gray;
+}
+.current-player-7 .current-player-bg, .player-bg-7 {
+    background-color: tan;
+}
+.current-player-8 .current-player-bg, .player-bg-8 {
+    background-color: rgb(235, 235, 235);
 }

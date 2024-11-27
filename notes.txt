@@ -1,5 +1,8 @@
 To Do:
+X cards remain (on right of score tabs)
+challenge
 
+style: 
+home
 faceoff
-
-styling
+options

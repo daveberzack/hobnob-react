@@ -1,9 +1,9 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
 const GameContext = createContext(null);
 
 const allCards = [];
-for (let i=0; i<52; i++) allCards.push(i);
+for (let i=1; i<827; i++) allCards.push(i);
 
 const GameProvider = ({ children }) => {
 
@@ -17,17 +17,24 @@ const GameProvider = ({ children }) => {
         FACEOFF: 6,
         WINNER: 7
     }
-    const [currentView, setCurrentView] = useState(views.HOME);
 
+    const [currentView, setCurrentView] = useState(views.HOME);
     const [numberOfCardsBeforeGuessing, setNumberOfCardsBeforeGuessing] = useState(0);
     const [currentTurnPlayer, setCurrentTurnPlayer] = useState(0);
     const [currentGuessingPlayer, setCurrentGuessingPlayer] = useState(0);
     const [isFaceoff, setIsFaceoff] = useState(false);
     const [playerScores, setPlayerScores] = useState([]); //-1 means out of the game
-    const [newCards, setNewCards] = useState([2,4,6,8,1,3,5,7]);
+    const [newCards, setNewCards] = useState([]);
     const [namedCards, setNamedCards] = useState([]);
     const [guessedCards, setGuessedCards] = useState([]);
 
+    //temporarily skip start screens
+    useEffect( ()=> {
+        setCurrentView(views.OPTIONS);
+        startGame(3, 15, 8);
+        setPlayerScores([4,2,1,3]);
+    },[]);
+     
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -164,6 +171,7 @@ const GameProvider = ({ children }) => {
         setGuessedCards(updatedGuessedCards);
 
         //show faceoff... but if there's already a winner, skip to winner screen
+        setIsFaceoff(true);
         setCurrentView(views.FACEOFF);
         checkForWinner(newPlayerScores);
     }
@@ -200,6 +208,7 @@ const GameProvider = ({ children }) => {
             playerScores,
             views,
             currentView,
+            isFaceoff,
             currentCardToIntroduce: newCards[0],
             currentCardToGuess: namedCards[0],
             currentCardForFaceoff: guessedCards[0],

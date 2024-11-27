@@ -1,14 +1,20 @@
 import { useContext } from "react";
 import { GameContext } from "../utils/GameContext";
 import ScoreTab from "./ScoreTab";
-export default function Scores() {
+import "./Scores.css";
+export default function Scores({onPlayerClick}) {
   
-  const { playerScores, currentTurnPlayer} = useContext(GameContext);
+  const { playerScores, currentTurnPlayer, isFaceoff } = useContext(GameContext);
+
+    let classes = "scores";
+    if (playerScores.length>5) classes += " condensed-scores";
+    if (isFaceoff) classes += " faceoff"; 
+
     return (
-      <div className="scores">
+      <div className={classes}>
         {
           playerScores.map( (score, i )=>{
-            return <ScoreTab player={i} score={score} isCurrent={i==currentTurnPlayer} />
+            return <ScoreTab player={i} score={score} isCurrent={currentTurnPlayer==i} onPlayerClick={onPlayerClick} />
           })
         }
       </div>

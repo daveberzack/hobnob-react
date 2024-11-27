@@ -8,22 +8,42 @@ export default function Faceoff() {
     
     if (currentCardForFaceoff==-1) {
       return (
-        <div className="page" id="faceoff-page">
+        <div className="page current-player-bg" id="faceoff-page">
           <Scores/>
-          <h1>Faceoff Start</h1>
-          <button onClick={ ()=>{handleFaceoffGuess(true);}}>Start</button>
+
+          <div class="content-holder">
+          <div class="content-box">
+              <div className="title">
+                <h2>Face-Off</h2>
+                <p>Tie Breaker Round!</p>
+              </div>
+              <img className="card placeholder" src={"./characters/c1.png"}  />
+              <div className="button-bar">
+                <button onClick={()=>{handleFaceoffGuess(true);}}><img className="icon" src={"./next.png"} /></button>
+              </div>
+            </div>
+          </div>
         </div>
       );
     }
     else {
       return (
-        <div className="page" id="faceoff-page">
+        <div className="page current-player-bg" id="faceoff-page">
           <Scores/>
-          <h1>Faceoff</h1>
-          <div>Player {currentTurnPlayer}</div>
-          <div>Card {currentCardForFaceoff}</div>
-          <button onClick={ ()=>{handleFaceoffGuess(true);}}>Correct</button>
-          <button onClick={ ()=>{handleFaceoffGuess(false);}}>Incorrect</button>
+
+          <div class="content-holder">
+          <div class="content-box">
+              <div className="title">
+                <h2>Player {currentTurnPlayer+1}</h2>
+                <p>Who is this?</p>
+              </div>
+              <img className="card current-player-bg" src={"./characters/c"+currentCardForFaceoff+".png"} />
+              <div className="button-bar"h>
+                <button onClick={()=>{handleFaceoffGuess(true);}}><img className="icon" src={"./right.png"} /></button>
+                <button onClick={()=>{handleFaceoffGuess(false);}}><img className="icon" src={"./wrong.png"} /></button>
+              </div>
+            </div>
+          </div>
         </div>
       );
     }

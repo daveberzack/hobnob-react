@@ -1,15 +1,22 @@
-export default function ScoreTab({player, score, isCurrent}) {
+export default function ScoreTab({player, score, isCurrent, onPlayerClick}) {
   
-    const classes = isCurrent ? "score-tab is-current" : "score-tab";
+  let scoreImage = score;
+  let  classes = "score-tab player-bg-"+player;
+  if (isCurrent) classes += " is-current";
+  if (score<0) {
+    classes += " is-out";
+    scoreImage = "x";
+  }
     const dots = [];
     for (let i=0; i<score; i++) {
         dots.push(<div></div>);
     }
+
     return (
-      <div className={classes}>
-        <h3>{player}</h3>
-        <div className="score-dots">
-            {dots}
+      <div className={classes} onClick={()=>{if (onPlayerClick) onPlayerClick(player)}}>
+        <h3>{player+1}</h3>
+        <div className="score">
+          <img src={`./img/score/${scoreImage}.gif`}/>
         </div>
       </div>
     );
