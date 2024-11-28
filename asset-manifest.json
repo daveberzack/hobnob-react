@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/hobnob-react/static/css/main.1f0cb332.css",
-    "main.js": "/hobnob-react/static/js/main.6359a952.js",
+    "main.css": "/hobnob-react/static/css/main.47478b03.css",
+    "main.js": "/hobnob-react/static/js/main.e864ceff.js",
     "index.html": "/hobnob-react/index.html",
-    "main.1f0cb332.css.map": "/hobnob-react/static/css/main.1f0cb332.css.map",
-    "main.6359a952.js.map": "/hobnob-react/static/js/main.6359a952.js.map"
+    "main.47478b03.css.map": "/hobnob-react/static/css/main.47478b03.css.map",
+    "main.e864ceff.js.map": "/hobnob-react/static/js/main.e864ceff.js.map"
   },
   "entrypoints": [
-    "static/css/main.1f0cb332.css",
-    "static/js/main.6359a952.js"
+    "static/css/main.47478b03.css",
+    "static/js/main.e864ceff.js"
   ]
 }
