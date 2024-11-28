@@ -1,4 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
+import { getStartingDeck, shuffleArray } from './CardManager';
 
 const GameContext = createContext(null);
 
@@ -27,26 +28,14 @@ const GameProvider = ({ children }) => {
     const [newCards, setNewCards] = useState([]);
     const [namedCards, setNamedCards] = useState([]);
     const [guessedCards, setGuessedCards] = useState([]);
+    const [modalData, setModalData] = useState({});
 
     //temporarily skip start screens
     useEffect( ()=> {
-        // setCurrentView(views.OPTIONS);
         // startGame(3, 15, 8);
-        // setPlayerScores([4,2,1,3]);
+        // setPlayerScores([2,2,1,2]);
+        // setGuessedCards([1,2,3,4,5,6,7,8]);
     },[]);
-     
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-        return array;
-    }
-
-    function getStartingDeck(count){
-        const shuffled = [...allCards].sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, count);
-    }
 
     function nextPlayer(){
         let newPlayer = currentTurnPlayer;
@@ -81,6 +70,7 @@ const GameProvider = ({ children }) => {
         setPlayerScores(scores);
         setNumberOfCardsBeforeGuessing(numBeforeGuessing);
         const startingCards = getStartingDeck(numCards);
+        console.log("starting deck",startingCards);
         setNewCards(startingCards);
         setNamedCards([]);
         setGuessedCards([]);
@@ -156,7 +146,7 @@ const GameProvider = ({ children }) => {
         });
         const newPlayerScores = playerScores.map( (ps) => {
             if (ps==maxScore){
-                return 1;
+                return ps;
             }
             else {
                 return -1
@@ -167,11 +157,11 @@ const GameProvider = ({ children }) => {
         //shuffle then add a blank placeholder to guessedCards (so faceoff shows intro screen)
         let updatedGuessedCards = [...guessedCards]
         updatedGuessedCards = shuffleArray(updatedGuessedCards)
-        updatedGuessedCards = [-1, ...updatedGuessedCards]
         setGuessedCards(updatedGuessedCards);
 
         //show faceoff... but if there's already a winner, skip to winner screen
         setIsFaceoff(true);
+        nextPlayer();
         setCurrentView(views.FACEOFF);
         checkForWinner(newPlayerScores);
     }
@@ -183,7 +173,6 @@ const GameProvider = ({ children }) => {
             setPlayerScores(newPlayerScores);
             checkForWinner(newPlayerScores);
         }
-
         const newGuessedCards = [...guessedCards];
         newGuessedCards.shift();
         setGuessedCards(newGuessedCards);
@@ -200,7 +189,7 @@ const GameProvider = ({ children }) => {
         }
     }
     
-
+console.log(newCards.length+","+namedCards.length);
     return (
         <GameContext.Provider value={{
             currentTurnPlayer,
@@ -212,6 +201,7 @@ const GameProvider = ({ children }) => {
             currentCardToIntroduce: newCards[0],
             currentCardToGuess: namedCards[0],
             currentCardForFaceoff: guessedCards[0],
+            cardsRemaining: newCards.length+namedCards.length,
             showHome,
             showAbout,
             showOptions,

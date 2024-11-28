@@ -39,8 +39,8 @@ export default function Guess() {
         </div>
         {
           isSelectingPlayerForChallenge &&
-          <div className="challenge-modal-overlay">
-            <div className="challenge-modal">
+          <div className="modal-overlay">
+            <div className="modal">
               Choose a player to nudge by tapping on their tab
             </div>
           </div>

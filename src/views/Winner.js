@@ -12,9 +12,20 @@ export default function Winner() {
 
     return (
       <div className="page" id="winner-page">
-        <h1>Winner</h1>
-        Player {winner}
-        <button onClick={showHome}>Home</button>
+      
+        <div className="modal-overlay clickable-modal-overlay covering-modal-overlay">
+          <div className="modal">
+            <h1>Winner</h1>
+            Player {winner}
+            <button onClick={showHome}>
+              <img className="icon" src={"./img/button/home.png"} />
+              Home
+            </button>
+          </div>
+        </div>
+      
       </div>
     );
 }
+
+

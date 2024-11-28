@@ -14,7 +14,7 @@
 #options-page label {
     display: block;
     text-align: center;
-    margin-bottom:5px;
+    margin-bottom:15px;
 }
 
 .player-select {
@@ -44,6 +44,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    max-width: 270px;
+    flex-wrap: wrap;
 }
 .card-select div {
     display: flex;

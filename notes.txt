@@ -1,8 +1,7 @@
 To Do:
-X cards remain (on right of score tabs)
-challenge
+fix issue with last point not being scored
+tie after faceoff
 
 style: 
 home
-faceoff
-options
+winner
