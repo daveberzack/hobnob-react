@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { GameContext } from "../utils/GameContext";
 import Scores from "../components/Scores";
 import Card from "../components/Card";
+import Button from "../components/Button";
 
 export default function Introduce() {
 
@@ -17,12 +18,9 @@ export default function Introduce() {
               <p>Introduce this person with a name and one fun fact about them.</p>
           </div>
           <div className="buttons">
-            <button className="placeholder"/>
-            <button className="placeholder"/>
-            <button onClick={handleIntroduce}>
-              <img className="icon" src="/img/button/next.png" alt="Next"/>
-              <h3>Next</h3>
-            </button>
+            <Button isPlaceholder={true} />
+            <Button isPlaceholder={true} />
+            <Button label="Next" icon="next" onClick={handleIntroduce} />
           </div>
         </div>
       </div>

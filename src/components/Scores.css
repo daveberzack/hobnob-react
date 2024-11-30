@@ -37,11 +37,14 @@
 
 .score-tab .score {
     border-radius: 7px;
-    width: 45px;
+    width:34px;
     box-sizing: border-box;
+    margin:5px 5px 0 0;
 }
 .score-tab .score img{
     width: 100%;
+    background-color: #00000033;
+    border-radius: 10px;
 }
 
 
@@ -50,6 +53,7 @@
 }
 
 .condensed-scores .score {
+    margin:0px;
     width: 30px;
 }
 

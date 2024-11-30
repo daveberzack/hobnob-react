@@ -1,6 +1,7 @@
 import "./Modal.css";
 import { useContext } from "react";
 import { GameContext } from "../utils/GameContext";
+import Button from "../components/Button";
 
 export default function Modal() {
 
@@ -24,9 +25,7 @@ export default function Modal() {
                 
                 {modalData.buttonText && 
                     <div className="button-group">
-                        <button onClick={handleClick}>
-                            <h3>{modalData.buttonText}</h3>
-                        </button>
+                        <Button label={modalData.buttonText} onClick={handleClick} />
                     </div>
                 }
             </div>

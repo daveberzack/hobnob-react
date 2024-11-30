@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { GameContext } from "../utils/GameContext";
 import './Options.css';
+import Button from "../components/Button";
 
 export default function Options() {
 
@@ -77,7 +78,7 @@ export default function Options() {
               </div>
           </div>
           <div className="option">
-          <button onClick={handleClickStart}>Start</button>
+            <Button label="Start" onClick={handleClickStart} />
           </div>
         </div>
       </div>

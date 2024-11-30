@@ -1,0 +1,27 @@
+button {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #222;
+    border-radius: 10px;
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    width: 120px;
+}
+button .icon {
+    width: 30px;
+    height: 30px;
+}
+button h3 {
+    flex: 1;
+    text-align: left;
+    margin-left:5px;
+}
+button.centered h3 {
+    text-align: center;
+}

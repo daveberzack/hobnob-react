@@ -16,7 +16,7 @@ export default function ScoreTab({player, score, isCurrent, onPlayerClick}) {
       <div className={classes} onClick={()=>{if (onPlayerClick) onPlayerClick(player)}}>
         <h3>{player+1}</h3>
         <div className="score">
-          <img src={`/img/score/${scoreImage}.gif`} alt={`${scoreImage} points`}/>
+          <img src={`${process.env.PUBLIC_URL}/img/score/${scoreImage}.gif`} alt={`${scoreImage} points`}/>
         </div>
       </div>
     );

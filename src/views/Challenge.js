@@ -3,6 +3,7 @@ import { GameContext } from "../utils/GameContext";
 import Scores from "../components/Scores";
 import Card from "../components/Card";
 import Timer from "../components/Timer";
+import Button from "../components/Button";
 
 export default function Challenge() {
   
@@ -22,14 +23,8 @@ export default function Challenge() {
               <Timer/>
           </div>
           <div className="buttons">
-            <button onClick={()=>{handleGuess(true);}}>
-              <img className="icon" src="/img/button/right.png" alt="Right"/>
-              <h3>Right</h3>
-            </button>
-            <button onClick={()=>{handleGuess(false);}}>
-              <img className="icon" src="/img/button/wrong.png" alt="Wrong"/>
-              <h3>Wrong</h3>
-            </button>
+            <Button label="Right" icon="right" onClick={()=>{handleGuess(true);}} />
+            <Button label="Wrong" icon="wrong" onClick={()=>{handleGuess(false);}} />
           </div>
         </div>
         </div>

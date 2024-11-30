@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../utils/GameContext";
 import "./Winner.css";
+import Button from "../components/Button";
 
 export default function Winner() {
 
@@ -38,16 +39,13 @@ export default function Winner() {
       <div className="page" id="winner-page">
       
         <div className="card">
-          <img className={"player-border-"+winnerColorIndex} src={"/img/victory/"+victoryImageId+".jpg"} alt="Victory!"/>
+          <img className={"player-border-"+winnerColorIndex} src={`${process.env.PUBLIC_URL}/img/victory/${victoryImageId}.jpg`} alt="Victory!"/>
         </div>
         
         <div className={"content-box player-bg-"+winnerColorIndex}>
           <h1>{message1}</h1>
           <h2>{message2}</h2>
-            <button onClick={showHome}>
-              <img className="icon" src="/img/button/home.png" alt="Home"/>
-              Home
-            </button>
+          <Button label="Home" icon="home" onClick={showHome} />
         </div>
       </div>
     );

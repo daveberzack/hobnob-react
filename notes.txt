@@ -3,6 +3,9 @@
 modal/options as speech bubble?
 
 refactor styles
+buttongroup / buttons
+nudge image, other icons and styling
+
 test on devices
 new logo/homepage
 
