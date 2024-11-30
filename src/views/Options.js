@@ -26,11 +26,19 @@ export default function Options() {
       {before:12, time:"30-35", challenge:"Brutal"}
     ]
 
-    const { startGame } = useContext(GameContext);
+    const { startGame, setModalData, modals } = useContext(GameContext);
   
     const [numberOfPlayers, setNumberOfPlayers] = useState(5);
     const [numberOfCards, setNumberOfCards] = useState(13);
 
+    function handlePlayerClick(n){
+      if (n>numberOfCards) setModalData(modals.OPTION_ERROR);
+      else setNumberOfPlayers(n);
+    }
+    function handleCardClick(n){
+      if (n<numberOfPlayers) setModalData(modals.OPTION_ERROR);
+      else setNumberOfCards(n);
+    }
     function handleClickStart(){
       const numberOfCardsBeforeGuessing = cardNumberInfo[numberOfCards].before-1; //-1 is adjusting for edge case miscalculation, which I should fix
       startGame(numberOfPlayers, numberOfCards, numberOfCardsBeforeGuessing);
@@ -48,7 +56,7 @@ export default function Options() {
                   playerOptions.map( (p) => {
                     let classes = "player-bg-"+(p-1);
                     if (numberOfPlayers < p) classes += " dimmed";
-                    return <div key={"p"+p} className={classes} onClick={ ()=>{setNumberOfPlayers(p)} }>{p}</div>
+                    return <div key={"p"+p} className={classes} onClick={ ()=>{handlePlayerClick(p)} }>{p}</div>
                   })
                 }
               </div>
@@ -61,7 +69,7 @@ export default function Options() {
                     cardOptions.map( (p) => {
                       let classes = "";
                       if (numberOfCards < p) classes += " dimmed";
-                      return <div key={"p"+p} className={classes} onClick={ ()=>{setNumberOfCards(p)} }>{p}</div>
+                      return <div key={"p"+p} className={classes} onClick={ ()=>{handleCardClick(p)} }>{p}</div>
                     })
                   }
                 </div>

@@ -2,6 +2,7 @@ import "./Button.css";
 
 export default function Button({label, icon, onClick, isPlaceholder}) {
 
+    icon = null;
     let classes = "";
     if (isPlaceholder) classes += "placeholder";
     if (!icon) classes += " centered";

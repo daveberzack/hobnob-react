@@ -40,6 +40,15 @@ const GameProvider = ({ children }) => {
             buttonText:"OK",
             verticalOffset:"-80px"
         },
+        OPTION_ERROR: {
+            title:"That Won't Work",
+            content:<>
+                <p>You can't select fewer characters than players.</p>
+                <p>Some players wouldn't get a turn.</p>
+            </>,
+            buttonText:"OK",
+            verticalOffset:"-80px"
+        },
         PHASE_1: {
             title:"Meet & Greet",
             content:<>
@@ -63,7 +72,7 @@ const GameProvider = ({ children }) => {
         PHASE_3: {
             title:"Winding Down",
             content:<>
-                <p>That's it! No more new characters. Just take turns recalling the rest of the friends we introduced. The <b>Countdown</b> beside the player tabs tracks how many are left.</p>
+                <p>That's it! No more new characters. Just take turns recalling the rest of the friends we introduced. The <b>Remaining </b> counter beside the player tabs will count down how many are left.</p>
                 <p>Once we've seen all our characters, the player with most points wins. If it's a tie, they'll go to a final <b>Face-Off</b> round.</p>
                 <p>I hope it is. That's my favorite part.</p>
             </>,
@@ -76,7 +85,7 @@ const GameProvider = ({ children }) => {
             content:<>
                 <p>All the players with the highest score now compete in a single elimination tie-breaker.</p>
                 <p>On your turn, you have just 5 seconds to recall a character's name and fun fact. If you get it wrong, you're out.</p>
-                <p>The last player remaining is the winner, and gets the grand prize: a randomly generated trophy to celebrate your fabulous performance.</p>
+                <p>The last player remaining is the winner, and will be awarded a randomly generated trophy to celebrate your fabulous performance.</p>
             </>,
             buttonText:"OK",
             isFullScreen:true,
@@ -103,6 +112,13 @@ const GameProvider = ({ children }) => {
         if (phase==3) setModalData(modals.PHASE_3);
         if (phase==4) setModalData(modals.PHASE_4);
     },[phase]);
+
+    //temporarily skip start screens
+    // useEffect( ()=> {
+    //     startGame(3, 15, 8);
+    //     setPlayerScores([2,1,1,0,2,1,0,2,2]);
+    //     setGuessedCards([1,2,3,4,5,6,7,8]);
+    // },[]);
 
     function nextPlayer(scores){ //can pass in scores to override delayed state
         if (!scores) scores = playerScores;

@@ -11,7 +11,7 @@ button {
     color: white;
     font-weight: bold;
     height: 40px;
-    width: 120px;
+    width: 100px;
 }
 button .icon {
     width: 30px;
@@ -20,7 +20,6 @@ button .icon {
 button h3 {
     flex: 1;
     text-align: left;
-    margin-left:5px;
 }
 button.centered h3 {
     text-align: center;

@@ -16,16 +16,18 @@
 }
 
 .score-tab {
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
     display: flex;
     flex-direction: row;
     border-bottom: 5px solid #222;
     box-sizing: border-box;
     flex: 1 1;
     max-width:75px;
+    padding: 0px 2px;
 }
 .score-tab.is-current {
     border-bottom: 2px solid #00000000;
+    padding-bottom: 2px;
 }
 
 .score-tab h3 {
@@ -35,31 +37,47 @@
     flex: 1;
 }
 
+
 .score-tab .score {
-    border-radius: 7px;
-    width:34px;
+    flex: 1;
     box-sizing: border-box;
-    margin:5px 5px 0 0;
+    display: flex;
+    margin: 2px;
+    flex-wrap:wrap-reverse;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items:center;
 }
-.score-tab .score img{
-    width: 100%;
-    background-color: #00000033;
+.score-tab .score div {
+    width: 80%;
+    height: 5px;
+    background-color: #000;
+    margin: 2px;
     border-radius: 10px;
 }
 
+.wrapped-scores .score div {
+    width: 30%;
+}
 
 .scores.condensed-scores {
     height: 70px;
 }
 
 .condensed-scores .score {
-    margin:0px;
-    width: 30px;
+    margin:0px 0px 5px 0px;
+    width:100%;
+    height: 37px;
+}
+.condensed-scores .score div {
+    height: 4px;
+    margin: 2px 2px;
 }
 
 .condensed-scores .score-tab {
     flex-direction: column;
     align-items: center;
+    height: 70px;
 }
 .condensed-scores .score-tab h3 {
     margin: 0px;

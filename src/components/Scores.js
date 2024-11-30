@@ -9,6 +9,7 @@ export default function Scores({onPlayerClick}) {
 
     let classes = "scores";
     if (playerScores.length>4) classes += " condensed-scores";
+    if (Math.max(...playerScores)>4) classes += " wrapped-scores";
     if (phase==4) classes += " faceoff"; 
 
     return (

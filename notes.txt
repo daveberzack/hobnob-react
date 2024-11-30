@@ -1,12 +1,12 @@
   "homepage": "https://daveberzack.github.io/hobnob-react",
   
-score as bar, not die pips
-nudge image, other icons and styling
 
 test on devices
 new logo/homepage
 
-save game, fremium, pwa
+pwa, storage
+save game state
+fremium: limit players 3-5, characters 6-12, character set of 25
 
 8 bottom
 26 bg
