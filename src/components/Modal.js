@@ -24,11 +24,13 @@ export default function Modal() {
                 {modalData.content}
                 
                 {modalData.buttonText && 
-                    <div className="button-group">
+                    <div className="button-row">
                         <Button label={modalData.buttonText} onClick={handleClick} />
                     </div>
                 }
+                <img className="speech" src={`${process.env.PUBLIC_URL}/img/speech.gif`} alt={`speech bubble`} />
             </div>
+            <img className="dave" src={`${process.env.PUBLIC_URL}/img/dave.png`} alt={`Dave`} />
         </div>
     );
 }

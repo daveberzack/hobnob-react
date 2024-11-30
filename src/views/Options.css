@@ -83,6 +83,10 @@
     flex-direction: column;
     justify-content: space-around;
 }
+.card-select-description h2{
+    margin-top: 5px;
+    font-weight: bold;
+}
 
 #options-page button {
     margin:5px;

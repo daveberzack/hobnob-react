@@ -3,13 +3,13 @@ import { getStartingDeck, shuffleArray } from './CardManager';
 
 const GameContext = createContext(null);
 
-const allCards = [];
-for (let i=1; i<827; i++) allCards.push(i);
+// const allCards = [];
+// for (let i=1; i<827; i++) allCards.push(i);
 
 const GameProvider = ({ children }) => {
 
-    const GUESS_TIME_LIMIT = 60;
-    const CHALLENGE_TIME_LIMIT = 30;
+    const GUESS_TIME_LIMIT = 40;
+    const CHALLENGE_TIME_LIMIT = 20;
     const FACEOFF_TIME_LIMIT = 5;
     
     const views = {
@@ -43,18 +43,18 @@ const GameProvider = ({ children }) => {
         PHASE_1: {
             title:"Meet & Greet",
             content:<>
-                <p>Let's make some friends! On your turn, introduce a new character by making up a name and a fun fact about them. Get creative... but don't make it impossible to remember.</p>
+                <p>Let's make some friends! On your turn, introduce a new character by making up a name and a fun fact about them. Get creative, be funny, but don't make it impossible to remember.</p>
                 <p>Everyone should try to remember these characters to score points later. Repeat them to yourself. Make up silly or visual mnemonics. Whatever works for you. Practicing this powerful social skill is what it's all about!</p>
-                </>,
+            </>,
             buttonText:"OK",
             isFullScreen:true
         },
         PHASE_2: {
             title:"Mix & Mingle",
             content:<>
-            <p>Look, our new friends are coming around again! On your turn, you get one try to recall both their name and fun fact to earn a point, which will be shown in your <b>Player Tab</b>. Click on <b>Right</b> or <b>Wrong</b> to score your response.</p>
-            <p>Alternately, you can <b>Nudge</b> another player to give them a chance. If they can recall the character, they get a point. If they don't, then you get a point after all. It's a bit of a gamble, so choose wisely.</p>
-            <p>Oh, and I'm giving you a <b>timer</b>. Decide together if you will use that strictly, or as a suggestion, or ignore it completely.</p>
+                <p>Look, our new friends are coming around again! We'll still introduce some new friends, but on your turn, you also get one try to recall an earlier character to earn a point. Click on <b>Right</b> or <b>Wrong</b> to score your response, and I'll keep the tally in your <b>Player Tab</b>.</p>
+                <p>Alternately, you can <b>Nudge</b> another player to give them a chance. If they can recall the character, they get a point. If they can't, then you get a point after all. It's a bit of a gamble, so choose wisely.</p>
+                <p>Oh, and I'm giving you a <b>timer</b>. Decide together if you will use that strictly, or as a suggestion, or ignore it completely.</p>
             </>,
             buttonText:"OK",
             isFullScreen:true,
@@ -63,8 +63,9 @@ const GameProvider = ({ children }) => {
         PHASE_3: {
             title:"Winding Down",
             content:<>
-            <p>That's it! No more new characters. Just take turns recalling the rest of the characters already introduced. The <b>Remaining Cards</b> counter beside the player tabs will count down how many are left.</p>
-            <p>Once we've seen all the character cards, the player with most points wins. If it's a tie, they'll go to a final <b>Face-Off</b> round.</p>
+                <p>That's it! No more new characters. Just take turns recalling the rest of the friends we introduced. The <b>Countdown</b> beside the player tabs tracks how many are left.</p>
+                <p>Once we've seen all our characters, the player with most points wins. If it's a tie, they'll go to a final <b>Face-Off</b> round.</p>
+                <p>I hope it is. That's my favorite part.</p>
             </>,
             buttonText:"OK",
             isFullScreen:true,
@@ -75,7 +76,7 @@ const GameProvider = ({ children }) => {
             content:<>
                 <p>All the players with the highest score now compete in a single elimination tie-breaker.</p>
                 <p>On your turn, you have just 5 seconds to recall a character's name and fun fact. If you get it wrong, you're out.</p>
-                <p>The last player remaining is the winner, and will be awarded a randomly generated trophy to celebrate your fabulous performance.</p>
+                <p>The last player remaining is the winner, and gets the grand prize: a randomly generated trophy to celebrate your fabulous performance.</p>
             </>,
             buttonText:"OK",
             isFullScreen:true,
@@ -96,20 +97,12 @@ const GameProvider = ({ children }) => {
     const [timerId, setTimerId] = useState(0);
     const [phase, setPhase] = useState(0);
 
-    //temporarily skip start screens
-    useEffect( ()=> {
-        // startGame(3, 15, 8);
-        // setPlayerScores([1,1,2,2]);
-        // setGuessedCards([1,2,3,4,5,6,7,8]);
-    },[]);
-
     useEffect( ()=> { //this will show the appropriate model when we move to a new phase
         if (phase==1) setModalData(modals.PHASE_1);
         if (phase==2) setModalData(modals.PHASE_2);
         if (phase==3) setModalData(modals.PHASE_3);
         if (phase==4) setModalData(modals.PHASE_4);
     },[phase]);
-    
 
     function nextPlayer(scores){ //can pass in scores to override delayed state
         if (!scores) scores = playerScores;
@@ -142,9 +135,11 @@ const GameProvider = ({ children }) => {
 
     function startGame(numPlayers, numCards, numBeforeGuessing){
         setPhase(1);
+
         const scores = [];
         for (let i=0; i<numPlayers; i++) scores.push(0);
         setPlayerScores(scores);
+
         setNumberOfCardsBeforeGuessing(numBeforeGuessing);
         const startingCards = getStartingDeck(numCards);
         setNewCards(startingCards);
@@ -322,15 +317,15 @@ const GameProvider = ({ children }) => {
             handleFaceoffGuess,
             setModalData
         }}
+
         debug = {{ //just for debugging visibility
             numberOfCardsBeforeGuessing,
             newCards,
             namedCards,
             guessedCards
         }}
-        >
-        {children}
-        </GameContext.Provider>
+
+        >{children}</GameContext.Provider>
     );
 }
 

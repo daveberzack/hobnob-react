@@ -1,14 +1,12 @@
   "homepage": "https://daveberzack.github.io/hobnob-react",
   
-modal/options as speech bubble?
-
-refactor styles
-buttongroup / buttons
+score as bar, not die pips
 nudge image, other icons and styling
 
 test on devices
 new logo/homepage
 
+save game, fremium, pwa
 
 8 bottom
 26 bg
@@ -20,7 +18,6 @@ new logo/homepage
 195 earring
 235 bg
 243 earring
-391 chin. remove?
 392 bg
 423 clean up bg
 462 earring

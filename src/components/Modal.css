@@ -41,8 +41,29 @@
     margin: 15px 0px;
   }
 
-  .modal .button-group {
+  .modal .button-row {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .modal .speech {
+    position: absolute;
+    bottom:-22px;
+    right: 120px;
+    height: 25px;
+    display: none;
+  }
+
+  .modal-overlay .dave {
+    display: none;
+    pointer-events: none;
+    position: absolute;
+    bottom:0px;
+    right: 10px;
+    height: 110px;
+  }
+
+  .full-modal-overlay .dave, .full-modal-overlay .speech {
+    display: block;
   }

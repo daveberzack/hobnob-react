@@ -14,16 +14,16 @@ export default function Options() {
       {before:5, time:"10-15", challenge:"Low"},
       {before:6, time:"10-15", challenge:"Modest"}, //10
       {before:6, time:"10-15", challenge:"Modest"},
-      {before:7, time:"15-20", challenge:"Medium"}, 
+      {before:7, time:"10-15", challenge:"Medium"}, 
       {before:7, time:"15-20", challenge:"Medium"},
       {before:8, time:"15-20", challenge:"Medium"}, 
-      {before:8, time:"20-25", challenge:"Medium"}, //15
+      {before:8, time:"15-20", challenge:"Medium"}, //15
       {before:9, time:"20-25", challenge:"Tough"},
       {before:9, time:"20-25", challenge:"Tough"}, 
       {before:10, time:"25-30", challenge:"Tough"},
       {before:11, time:"25-30", challenge:"Brutal"},
-      {before:12, time:"25-30", challenge:"Brutal"}, //20
-      {before:12, time:"25-30", challenge:"Brutal"}
+      {before:12, time:"30-35", challenge:"Brutal"}, //20
+      {before:12, time:"30-35", challenge:"Brutal"}
     ]
 
     const { startGame } = useContext(GameContext);
