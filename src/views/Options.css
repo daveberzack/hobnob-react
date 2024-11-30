@@ -40,11 +40,16 @@
     border-style: dotted;
 }
 
+.card-select-block {
+    display: flex;
+    flex-direction: row;
+}
+
 .card-select {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    max-width: 270px;
+    max-width: 200px;
     flex-wrap: wrap;
 }
 .card-select div {
@@ -66,6 +71,17 @@
     background:none;
     border-style: dotted;
     color: #222;
+}
+.card-select-description {
+    margin: 0px 10px;
+    border-radius: 10px;
+    background-color: #eee;
+    flex: 1;
+    padding: 20px 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 #options-page button {

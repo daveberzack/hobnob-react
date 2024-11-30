@@ -1,0 +1,13 @@
+.timer {
+    border: 3px solid #222;
+    background-color: white;
+    height: 20px;
+    border-radius: 5px;
+    margin: 10px 60px 10px 30px; 
+}
+
+.timer-bar {
+    height: 100%;
+    width: 0;
+    background-color: #222;
+}

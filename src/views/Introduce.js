@@ -20,7 +20,7 @@ export default function Introduce() {
             <button className="placeholder"/>
             <button className="placeholder"/>
             <button onClick={handleIntroduce}>
-              <img className="icon" src={"./img/button/next.png"} />
+              <img className="icon" src="/img/button/next.png" alt="Next"/>
               <h3>Next</h3>
             </button>
           </div>

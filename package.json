@@ -1,8 +1,8 @@
 {
+  "homepage": "https://daveberzack.github.io/hobnob-react",
   "name": "hobnob-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://daveberzack.github.io/hobnob-react",
   "dependencies": {
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",

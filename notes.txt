@@ -1,7 +1,26 @@
-To Do:
-fix issue with last point not being scored
-tie after faceoff
+  "homepage": "https://daveberzack.github.io/hobnob-react",
+  
+modal/options as speech bubble?
 
-style: 
-home
-winner
+refactor styles
+test on devices
+new logo/homepage
+
+
+8 bottom
+26 bg
+48 bg
+71 earrings
+121 earring
+130 bg
+171-174 bg
+195 earring
+235 bg
+243 earring
+391 chin. remove?
+392 bg
+423 clean up bg
+462 earring
+616 bg
+644 earring
+691 bg

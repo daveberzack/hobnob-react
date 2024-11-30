@@ -108,39 +108,10 @@ button h3 {
     cursor: auto;
 }
 
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-  }
+b {
+    font-weight: bold;
+}
 
-  .clickable-modal-overlay {
-    pointer-events:all;
-  }
-  .clickable-modal-overlay {
-    background-color: #222;
-  }
-
-  .modal {
-    position: relative;
-    top:-80px;
-    width: 250px;
-    max-width: 90%;
-    text-align: center;
-    padding: 10px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    border: 5px solid #222;
-    line-height: 1.25;
-    font-size: 25px;
-  }
 
 .faceoff-instructions {
     background-color: white;
@@ -173,4 +144,33 @@ button h3 {
 }
 .current-player-8 .current-player-bg, .player-bg-8 {
     background-color: rgb(235, 235, 235);
+}
+
+
+.player-border-0 {
+    border-color: rgb(210, 182, 240);
+}
+.player-border-1 {
+    border-color: rgb(255, 201, 101);
+}
+.player-border-2 {
+    border-color: lightgreen;
+}
+.player-border-3 {
+    border-color: pink;
+}
+.player-border-4 {
+    border-color: lightblue;
+}
+.player-border-5 {
+    border-color: rgb(255, 255, 186);
+}
+.player-border-6 {
+    border-color: gray;
+}
+.player-border-7 {
+    border-color: tan;
+}
+.player-border-8 {
+    border-color: rgb(235, 235, 235);
 }

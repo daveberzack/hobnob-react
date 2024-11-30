@@ -7,6 +7,7 @@ import Guess from "./views/Guess";
 import Challenge from "./views/Challenge";
 import Faceoff from "./views/Faceoff";
 import Winner from "./views/Winner";
+import Modal from "./components/Modal";
 
 import './App.css';
 import { GameContext } from "./utils/GameContext";
@@ -18,14 +19,15 @@ function App() {
   const cv = currentView;
   return (
     <div id="app" className={"current-player-"+currentTurnPlayer}>
-      {cv==views.HOME && <Home />}
-      {cv==views.ABOUT && <About />}
-      {cv==views.OPTIONS && <Options />}
-      {cv==views.INTRODUCE && <Introduce />}
-      {cv==views.GUESS && <Guess />}
-      {cv==views.CHALLENGE && <Challenge />}
-      {cv==views.FACEOFF && <Faceoff />}
-      {cv==views.WINNER && <Winner />}
+      {cv===views.HOME && <Home />}
+      {cv===views.ABOUT && <About />}
+      {cv===views.OPTIONS && <Options />}
+      {cv===views.INTRODUCE && <Introduce />}
+      {cv===views.GUESS && <Guess />}
+      {cv===views.CHALLENGE && <Challenge />}
+      {cv===views.FACEOFF && <Faceoff />}
+      {cv===views.WINNER && <Winner />}
+      <Modal />
     </div>
   );
 }

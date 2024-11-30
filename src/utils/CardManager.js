@@ -262,7 +262,6 @@ function shuffleArray(array) {
 function getStartingDeck(count){
     const shuffledGroups = shuffleArray(allCardsInGroups);
     const groupsChosen = shuffledGroups.slice(0, count);
-    console.log(count, groupsChosen);
     const cardsChosen = groupsChosen.map( g => {
         const which = Math.floor(Math.random()*g.length);
         return g[which];
